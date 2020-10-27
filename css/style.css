@@ -1,0 +1,145 @@
+@import url("https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@500;600&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 10px;
+  font-family: "Barlow Semi Condensed", sans-serif;
+}
+
+:root {
+  --modarate-voilet: hsl(263, 55%, 52%);
+  --very-dark-grayish-blue: hsl(217, 19%, 35%);
+  --very-dark-blackish-blue: hsl(219, 29%, 14%);
+  --white: hsl(0, 0%, 100%);
+  --light-gray: hsl(0, 0%, 81%);
+  --light-grayish-blue: hsl(210, 46%, 95%);
+}
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background-color: var(--light-grayish-blue);
+}
+
+section {
+  margin: 5rem 15rem;
+}
+
+.card-items {
+  width: 100%;
+  height: 100%;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 2rem;
+}
+
+.card-item {
+  position: relative;
+  min-width: 300px;
+  height: auto;
+  background-color: #fff;
+  color: #fff;
+  padding: 0rem 3rem 3rem 2rem;
+  border-radius: 1rem;
+  box-shadow: 0 0.2rem 2rem rgba(0, 0, 0, 0.1);
+  z-index: 1;
+}
+
+.card-voilate {
+  background: var(--modarate-voilet);
+}
+
+.card-voilate::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: url("../images/bg-pattern-quotation.svg") center center no-repeat;
+  background-position: 72% 0%;
+  z-index: -1;
+}
+
+.card-grayish-blue {
+  background: var(--very-dark-grayish-blue);
+}
+
+.card-blackish-blue {
+  background-color: var(--very-dark-blackish-blue);
+}
+
+.card-white {
+  color: var(--very-dark-grayish-blue);
+}
+
+.card-itemProfile {
+  display: flex;
+  align-items: center;
+  padding-top: 2rem;
+}
+
+.card-itemProfile h4 {
+  font-size: 1.3rem;
+}
+
+.card-itemProfile small {
+  font-size: 1.1rem;
+  opacity: 0.5;
+}
+
+.card-itemImg img {
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-right: 1rem;
+}
+
+.card-voilate .card-itemImg img,
+.card-blackish-blue .card-itemImg img {
+  border: 3px solid #9c71e3;
+}
+
+.card-item h1 {
+  font-size: 2.2rem;
+  margin: 1rem 0 2rem;
+}
+
+.card-item p {
+  font-size: 1.4rem;
+  opacity: 0.7;
+}
+
+@media screen and (min-width: 900px) {
+  .card-items {
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-areas:
+      "card1 card1 card2 card5"
+      "card3 card4 card4 card5";
+  }
+
+  .card-voilate {
+    grid-area: card1;
+  }
+
+  .card-grayish-blue {
+    grid-area: card2;
+  }
+
+  .card-white {
+    grid-area: card3;
+  }
+
+  .card-blackish-blue {
+    grid-area: card4;
+  }
+
+  .card-kira {
+    grid-area: card5;
+  }
+}
